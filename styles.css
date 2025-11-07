@@ -327,6 +327,41 @@ section {
     max-width: 900px;
     margin: 0 auto;
 }
+/* Arrange image and text side-by-side */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem; /* space between image and text */
+    flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+/* Image container */
+.about-image img {
+    width: 250px;  /* make image smaller */
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Text container */
+.about-text {
+    flex: 1; /* take remaining space */
+    min-width: 300px;
+}
+
+/* On smaller screens, stack vertically again */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 180px;
+        margin-bottom: 1.5rem;
+    }
+}
 
 .about-text p {
     font-size: 1.1rem;
